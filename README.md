@@ -1,2 +1,5 @@
 # paper_abstract
-Post abstract of papers to issue for personal use.
+* 技術のトレンド調査のため、mdファイルで作成したメモ
+  *  作成したメモを見ながら、詳しく見る論文を決めたり、どんな実験をするか考えたりしたい
+* 論文リストを作成するPythonスクリプト
+* mdファイルをまとめてpdfにするPythonスクリプトを作成予定
