@@ -1,0 +1,40 @@
+文献番号,文献タイトル,論文リンク,著者/所属機関,発表年,キーワード,どんなもの？,先行研究と比べてどこがすごい？,技術や手法のキモはどこ？,どうやって有効だと検証した？,議論はある？,次に読むべき論文は？,その他
+1,"DAFNe: A One-Stage Anchor-Free Deep Model for Oriented Object Detection
+","https://arxiv.org/abs/2109.06148
+","Steven Lang,<sup>1</sup> Fabrizio Ventola,<sup>1</sup> Kristian Kersting<sup>1,2</sup>
+1 TU Darmstadt, Darmstadt, Germany
+2 Hessian Center for AI and Centre for Cognitive Science, Darmstadt, Germany
+{fsteven.lang, ventola, kerstingg}@cs.tu-darmstadt.de
+","2021
+","computer vision, object detection, oriented bounding box, anchor-free
+","バウンディングボックスを傾けた物体検出手法。
+DAFNe: A Dense one-stage Anchor-Free deep Network for oriented object detection.
+",,"* one-stageモデルであり、入力画像上の密なグリッド上で予測を行うため、two-stageモデルに比べて設計がシンプル
+* バウンディングボックスのアンカーを使用しないことで、予測の複雑さを軽減
+* 任意の向きのバウンディングボックスに対するcenter-ness functionの向きを考慮した一般化により、予測の低品質化を軽減
+* 中心からコーナーへのバウンディングボックス予測戦略を導入することで、物体のローカライズ性能を向上
+","* DOTA1.0データセットで76.95%mAP (従来の最良の結果よりも4.65%mAP高い)
+* DOTA 1.5データセットで87.76%mAP
+* HRSC2016で87.76%mAP
+",,,"コードあり https://github.com/steven-lang/DAFNe
+"
+2,"End-to-End Semi-Supervised Object Detection with Soft Teacher
+","https://arxiv.org/abs/2106.09018
+","Mengde Xu<sup>1</sup> Zheng Zhang<sup>1,2</sup> Han Hu<sup>2</sup> Jianfeng Wang<sup>2</sup> Lijuan Wang<sup>2</sup> Fangyun Wei<sup>2</sup>
+Xiang Bai<sup>1</sup> Zicheng Liu<sup>2</sup>  
+1 Huazhong University of Science and Technology  
+fmdxu,xbaig@hust.edu.cn  
+2 Microsoft  
+fzhez,hanhu,jianfw,lijuanw,fawe,zliug@microsoft.com
+","2021
+","computer vision, object detection, semi-supervised, soft teacher
+","End-to-Endの半教師あり物体検出手法
+",,"* ラベルのないバウンディングボックスの分類損失を、教師ネットワークが生成した分類スコアで重み付けするソフト教師メカニズム
+* ボックス回帰の学習のための信頼できる擬似ボックスを選択するボックスジッタリングアプローチ
+","* MS COCOデータセットで検証
+    * 様々な条件下、例えばラベリング率が1％，5％，10％で，従来の手法を大きく上回る結果
+    * COCOの全学習セットを用いて学習したベースライン検出器の40.9 mAPを，COCOの123Kのラベルなし画像を活用することで，3.6 mAP改善し，44.5 mAPを達成
+    * Swin Transformerベースのstate-of-the-artのオブジェクト検出器（test-devでは58.9mAP）では、検出精度を1.5mAP改善して60.4mAPを達成し、インスタンスセグメンテーションでは1.2mAP改善して52.4mAPを達成
+    * Object365の学習済みモデルを組み込むことで、検出精度 61.3mAP、インスタンスセグメンテーション精度 53.0mAPを達成し、state-of-the-art
+",,,"コードあり https://github.com/microsoft/SoftTeacher
+"
